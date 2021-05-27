@@ -1,0 +1,360 @@
+/* GLOBAL THINGS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+}
+
+:root {
+  --head-color: hsl(234, 17%, 35%);
+  --para-color: rgb(121, 121, 121);
+  --btn-color: linear-gradient(to left, hsl(192, 70%, 51%), hsl(136, 65%, 51%));
+  --btnhover-color: linear-gradient(
+    to right,
+    hsl(192, 70%, 51%),
+    hsl(136, 65%, 51%)
+  );
+}
+
+/* END GLOBAL THINGS */
+
+/* BODY THINGS */
+
+.container1 {
+  overflow: hidden;
+  position: relative;
+}
+
+.container1 .nav-cont {
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+}
+.container1 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  width: 80%;
+  margin: auto;
+}
+nav {
+  position: relative;
+}
+nav .logo img {
+  height: 25px;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 30px;
+  cursor: pointer;
+}
+nav ul li:hover {
+    color: rgb(30, 175, 30);
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 105%;
+    left: 30%;
+    flex-direction: column;
+    background-color: white;
+    width: 70%;
+    text-align: center;
+    margin-left: -40px;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform ease-in 0.5s;
+  }
+  .display {
+    transform: scale(1);
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+}
+/* ########################################## */
+
+/* ####################           BUTTON DESIGN             ###################### */
+
+.container1 button,
+footer button {
+  width: 145px;
+  height: 44px;
+  background: var(--btn-color);
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: transform 0.5s ease-out;
+}
+
+@media (max-width: 1070px) {
+  nav button {
+    display: none;
+  }
+}
+button:hover {
+  background: var(--btnhover-color);
+  transform: scale(1.1);
+}
+
+/* ####################           BUTTON DESIGN             ###################### */
+
+/* ########################################## */
+
+.container1 main {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+main .text * {
+  max-width: 33ch;
+  margin: 28px 0;
+}
+.text h1 {
+  font-size: 50px;
+  color: var(--head-color);
+}
+.text p {
+  line-height: 2;
+  color: var(--para-color);
+}
+.container1 .image-phones {
+    position: absolute;
+    top: -9%;
+    right: -7%;
+    z-index: -1;
+  }
+  @media (max-width: 1430px) {
+    .container1 .image-phones {
+      display: none;
+    }
+  }
+main .image-desk {
+  position: absolute;
+  top: 2%;
+  height: 500px;
+  right: 0;
+  z-index: -1;
+}
+.image-desk img {
+  height: 800px;
+}
+.image-mobile img {
+  display: none;
+}
+
+@media (max-width: 376px) {
+  .image-desk img {
+    display: none;
+  }
+  .image-mobile img {
+    display: block;
+  }
+
+  .image-mobile {
+    z-index: -3;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+  main .text {
+    text-align: center;
+  }
+}
+
+/* ################################################### */
+
+.container2 {
+  line-height: 1.9;
+  background-color: hsl(0, 0%, 97%);
+}
+
+.container2 > p {
+  max-width: 700px;
+  color: var(--para-color);
+}
+.container2 > p::first-letter {
+  color: hsl(233, 26%, 24%);
+  font-size: 20px;
+}
+.container2 > h2 {
+  color: var(--head-color);
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+@media (max-width: 376px) {
+  .container2 > h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+.container2 > * {
+  padding-left: 50px;
+}
+
+.container2 .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 50px 0;
+}
+.card {
+  width: 320px;
+}
+.card > * {
+  margin: 10px 0;
+}
+.card > p {
+  color: var(--para-color);
+}
+.card > h3 {
+  color: var(--head-color);
+}
+
+/* ################################################### */
+.container3 {
+  padding-left: 50px;
+  line-height: 1.9;
+}
+.container3 > h2 {
+  color: var(--head-color);
+  margin: 40px 0;
+  letter-spacing: 6px;
+  text-align: center;
+  font-size: 36px;
+}
+@media (max-width: 376px) {
+  .container3 {
+    padding-left: 10px;
+  }
+  .container3 .cart-container {
+    justify-content: flex-start;
+  }
+}
+
+.cart-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cart-container * > * {
+  margin: 15px 0;
+}
+.cart {
+  background-color: hsl(0, 3%, 95%);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.cart-container img {
+  max-height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cart-container p {
+  width: 200px;
+  color: var(--para-color);
+}
+p[name] {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* ######################################## */
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  background-color: var(--head-color);
+  width: 100%;
+  align-items: center;
+  min-height: 30vh;
+  padding: 10px;
+  color: white;
+  overflow: hidden;
+}
+footer ul {
+  list-style: none;
+}
+
+footer .col1 img {
+  width: 200px;
+  cursor: pointer;
+}
+footer .col1 ul {
+  display: flex;
+  margin: 20px;
+}
+footer .col1 ul li {
+  margin: 0 15px;
+}
+footer .col1 ul img {
+  width: 18px;
+  cursor: pointer;
+}
+
+footer .col2 {
+  display: flex;
+}
+@media (max-width: 376px) {
+  footer .col2 {
+    flex-direction: column;
+  }
+}
+.col2 ul {
+  flex: 1;
+}
+footer .col2 ul li {
+  margin: 30px 0;
+  cursor: pointer;
+}
+footer .col2 ul li:hover {
+  color: hsl(136, 65%, 51%);
+}
+footer .col3 > * {
+  margin: 35px 0;
+}
+.col3 {
+  justify-self: center;
+}
+
+footer .col3 button {
+  border: none;
+}
+footer .col3 p {
+  color: var(--para-color);
+}
+
+/* END BODY THINGS */
